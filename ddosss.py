@@ -42,7 +42,7 @@ print (" ")
 
 ip = input("\033[94m╔═══\033[91m[ Please input IP ] •\n\033[94m╠══>\033[0m ")
 
-port = int(input("\033[94m╠═══\033[91m[ Port enter 00000 ] •\n\033[94m╠══>\033[0m "))
+port = str(input("\033[94m╠═══\033[91m[ Port enter 00000 ] •\n\033[94m╠══>\033[0m "))
 
 speed = int(input("\033[94m╠═══\033[91m[ Attack speed (0-1000) ] •\n\033[94m╠══>\033[0m "))
 clear()
