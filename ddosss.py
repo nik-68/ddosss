@@ -32,8 +32,6 @@ os.system("@cls & @title Bui Quang Khai DDOS Tool by: BQK and Beta & @color e")
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 try:
-    import tools.addons.clean
-    import tools.addons.logo
     # import tools.addons.winpcap
     import tools.addons.wireshark
     from tools.method import AttackMethod
