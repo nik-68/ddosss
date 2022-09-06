@@ -32,8 +32,7 @@ os.system("@cls & @title Bui Quang Khai DDOS Tool by: BQK and Beta & @color e")
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 try:
-    # import tools.addons.winpcap
-    from tools.method import AttackMethod
+    # import
 except ImportError as err:
     CriticalError("Failed to import some packages", err)
     sys.exit(1)
