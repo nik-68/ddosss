@@ -35,7 +35,7 @@ import socks
 import ssl
 
 method = "HTTP"
-print('''
+print("
 =====[BQK-DdoS]=====
                                 ,-.
                                ( O_)
@@ -68,7 +68,7 @@ ___<__(|) _   **-/  / /   /
     | /  ,'
     |/,-'
     ' 
-""")
+")
 CRED2 = '\33[91m'
 
 #!/usr/bin/python3
