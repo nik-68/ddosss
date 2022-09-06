@@ -33,7 +33,6 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 try:
     # import tools.addons.winpcap
-    import tools.addons.wireshark
     from tools.method import AttackMethod
 except ImportError as err:
     CriticalError("Failed to import some packages", err)
