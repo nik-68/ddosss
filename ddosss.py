@@ -25,7 +25,14 @@ import os
 import sys
 import argparse
 from colorama import Fore
-
+import threading
+import random
+import time
+import socket
+import sys
+import requests 
+import socks
+import ssl
 
 method = "HTTP"
 print('''
@@ -66,24 +73,9 @@ CRED2 = '\33[91m'
 
 #!/usr/bin/python3
 #rewrite coded by ndbiaw
-import threading
-import random
-import time
-import socket
-import sys
-import requests 
-import socks
-import ssl
 
-print('''\r\n
-Phiên Bản: 1.0
-[Bạn không thể tấn công trang web chính phủ Việt Nam!]   
-© Copyright 2022 - Nguyễn Ngọc Bảo Châu (chaudvfb)
-Nghiêm cấm sử dụng với mục đích trái phát luật! 
-├─────────────────────────────────────────────────────┤
-Donate: MB BANK:5555537777777
-[!]Không Được Tấn Công Trang Web Của Chính Phủ[!]
-\r\n''')
+
+
 
 useragents=["Mozilla/5.0 (X11; CrOS x86_64 13505.63.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
 			"Mozilla/5.0 (X11; CrOS armv7l 13505.63.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
