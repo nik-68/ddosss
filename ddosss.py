@@ -35,7 +35,8 @@ import socks
 import ssl
 
 method = "HTTP"
-print("
+print("\033[91m
+
 =====[BQK-DdoS]=====
                                 ,-.
                                ( O_)
