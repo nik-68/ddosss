@@ -54,11 +54,6 @@ print("""\033[31m
            \033[36mРазнеси всех и вся 💥
 """)
 time.sleep(2)
-from socket import *
-#make the by sadra
-u = input(''' ip site start ip----->''')
-p=0
-
 
 import os
 import requests as r
