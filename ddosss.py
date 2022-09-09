@@ -71,7 +71,6 @@ import os
 import time
 import random
 import string
-from turtle import title
 import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
