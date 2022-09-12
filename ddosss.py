@@ -73,5 +73,3 @@ z =1
 while z <= 15000 :
     print(z ," ping :", x)
     z+=1
-while True:
-     print("ddos reussi")
