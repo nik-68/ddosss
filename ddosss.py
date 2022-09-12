@@ -76,8 +76,8 @@ print()
 input('Hit enter to start, Ctrl+C to exit => ')
 
 # change ip here
-ip = "8.8.8.8"
-port = 1000
+ip = "77.109.33.232"
+port = 80
 sent = 0
 
 
