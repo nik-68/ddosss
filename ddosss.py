@@ -76,7 +76,7 @@ def address_spoofer():
     print(assemebled)
     return assemebled
 
-target = raw_input("Enter the target to attack: => ")
+target = input("Enter the target to attack: => ")
 
 while True:
 
