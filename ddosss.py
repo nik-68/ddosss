@@ -68,7 +68,6 @@ import bz2, datetime, wget, json, cfscrape, urllib3
 from time import sleep
 from os import system
 from sys import stdout
-from scapy.all import *
 from random import randint
 
 urllib3.disable_warnings()
