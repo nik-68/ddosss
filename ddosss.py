@@ -62,7 +62,7 @@ time.sleep(2)
 
 
 print("\033[31m ━━━\033[33m Ваша Цель Ddoss IP ")
-u = input("\033[31m ┗━━━━━━\033[32m>\033[0m "))
+u = input("\033[31m ┗━━━━━━\033[32m>\033[0m ")
 
 from socket import *
 #make the by sadra
