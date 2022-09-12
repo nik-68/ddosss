@@ -245,7 +245,6 @@ def logo():
         
            \033[36mРазнеси всех и вся 💥
 """)
-time.sleep(2)
     try:
         print("\n[*] Target : " +str(url_main)+ ":" +str(port))
     except:
