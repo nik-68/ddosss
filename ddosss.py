@@ -70,6 +70,6 @@ init()
 print("\033[31m ━━━\033[33m Ваша Цель Ddoss")
 x = str(input("\033[31m ┗━━━━━━\033[32m>\033[0m "))
 z =1
-while z <= 15000 :
+while z <= 15000000000 :
     print(z ," ping :", x)
     z+=1
