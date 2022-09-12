@@ -69,11 +69,6 @@ import os
 import requests
 
 
-cc = "clear"
-if sys.platform == "win32":
-    cc = "cls"
-
-
 class Ping():
     def __init__(self, url, threads):
         self.target = url
