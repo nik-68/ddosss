@@ -61,7 +61,6 @@ print("""\033[31m
 time.sleep(2)
 
 
-from scapy.all import *
 import random
 
 
