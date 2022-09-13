@@ -70,7 +70,7 @@ import time
 print ("")
 print("\033[31m ╔═══\033[33m[ Ваша Цель [IP] ] •")
 target = input("\033[31m ┗━━━━━━\033[92m•> \033[0m")
-print("Target = ", target)
+print(" Target = ", target)
 time.sleep(0.5)
 print("\033[31m ╔═══\033[33m[ Fake IP ] •")
 fake_ip = input("\033[31m ┗━━━━━━\033[92m•> \033[0m")
