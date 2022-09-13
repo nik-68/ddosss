@@ -68,10 +68,15 @@ import time
 
 
 print ("")
-target = input("[+] Target IP: => ")
+print("\033[31m ╔═══\033[33m[ Ваша Цель [IP] ] •")
+target = input("\033[31m ┗━━━━━━\033[92m•> \033[0m")
 print("Target = ", target)
-fake_ip = input("[+] Fake IP: => ")
-port = input ("[+] Port to attack: => ")
+time.sleep(0.5)
+print("\033[31m ╔═══\033[33m[ Fake IP ] •")
+fake_ip = input("\033[31m ┗━━━━━━\033[92m•> \033[0m")
+time.sleep(0.5)
+print("\033[31m ╔═══\033[33m[ PORT ] •")
+port = input("\033[31m ┗━━━━━━\033[92m•> \033[0m")
 port_a = int(port)
 
 def attack():
