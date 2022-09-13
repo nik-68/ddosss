@@ -78,6 +78,7 @@ time.sleep(0.5)
 print("\033[31m ╔═══\033[33m[ PORT ] •")
 port = input("\033[31m ┗━━━━━━\033[92m•> \033[0m")
 port_a = int(port)
+print ("\033[36m")
 
 def attack():
     while True:
