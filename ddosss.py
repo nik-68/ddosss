@@ -109,7 +109,7 @@ if ioru == ('ip'):
 
 #=================================================================================================
 
-print("     your target IP:  ", ip)
+print(" your target IP:  ", ip)
 print('')
 thread_count = input(color.red+" Enter power attack => ")
 print('')
@@ -117,7 +117,7 @@ port = input(" Enter target port =>   ")
 print('')
 UDP_PORT = int(port)
 MESSAGE = input(color.abi_kamrang+'      Enter message =>  ')
-print(color.sefid+'------------------------------------------------------------')
+print(color.sefid+'---------------------------------------------------')
 time.sleep(2)
 print("")
 print(color.red+" [       ] 0%")
@@ -138,7 +138,7 @@ else:
 
 print('''starting...''')
 print('')
-print(color.sefid+'------------------------------------------------------------')
+print(color.sefid+'--------------------------------------------------')
 print(color.sabz+"UDP target IP: ", ip)
 print(color.sabz+"UDP target port: ", UDP_PORT)
 time.sleep(3)
