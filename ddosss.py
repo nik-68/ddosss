@@ -31,9 +31,6 @@ import time
 import socket
 import sys
 import requests 
-import socks
-import random
-import socket
 import threading
 import time
 import os,sys
